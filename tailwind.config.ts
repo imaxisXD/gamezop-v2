@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      "keyframes": {
+        "shimmer": {
+          "100%": {
+            "transform": "translateX(100%)",
+          },
+        },
+      },
       colors: {
         'background': '#14181d',
         'navbar': '#212026',

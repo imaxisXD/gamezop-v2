@@ -1,5 +1,5 @@
 import { Heart, Joystick } from "lucide-react"
-import Search from "./ui/search"
+import Search from "../../ui/search"
 
 function NavBar() {
     return (
