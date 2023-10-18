@@ -1,9 +1,9 @@
 import { Heart, Joystick } from "lucide-react"
 import Search from "../../ui/search"
 
-function NavBar() {
+function SearchBar() {
     return (
-        <div className="bg-background flex items-center justify-between py-4 gap-10 px-2 w-full">
+        <div className="flex items-center justify-between py-4 gap-10 px-2 w-full">
             <Search />
             <div className="flex gap-2">
                 <div
@@ -27,4 +27,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default SearchBar

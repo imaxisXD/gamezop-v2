@@ -2,9 +2,9 @@ import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
 import Image from "next/image"
 
+
+
 export default async function Categories() {
-    const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-    await delay(20000);
     const results: GameData = await getData();
     return (
         <ul className="flex flex-col items-start gap-1">
