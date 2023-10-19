@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { getPlaiceholder } from "plaiceholder"
 
 export default async function getBase64(imageUrl: string) {

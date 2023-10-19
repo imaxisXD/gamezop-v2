@@ -13,7 +13,8 @@
     "next": "13.5.5",
     "plaiceholder": "^3.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sonner": "^1.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
