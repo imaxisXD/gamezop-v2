@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const defautTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   content: [
@@ -7,6 +8,10 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xs: '540px',
+      ...defautTheme.screens,
+    },
     extend: {
       "keyframes": {
         "shimmer": {
