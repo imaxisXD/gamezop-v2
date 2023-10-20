@@ -1,12 +1,12 @@
 import SearchBar from "@/components/layout/navbar/navbar";
-import GameCard from "@/components/ui/game-card/game-card";
 import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
 import TrendingGames from "@/components/ui/trending/trending-game";
-import CardLoading from "@/components/ui/game-card/card-loading";
-import Loading from "@/components/layout/navbar/loading";
 import { Suspense } from "react";
 import TrendingGamesLoading from "@/components/ui/trending/trending-loading";
+import GameOfWeek from "@/components/ui/gameofweek/gameofweek";
+import RandomGame from "@/components/ui/randomgame";
+import GameOfWeekLoading from "@/components/ui/gameofweek/gameofweek-loading";
 
 
 export default async function Home() {
@@ -22,12 +22,14 @@ export default async function Home() {
 
 
   return (
-    <main className="flex min-h-screen px-11 flex-col items-center justify-between w-[80%]">
+    <main className="flex min-h-screen px-11 gap-10 flex-col items-center justify-center text-left w-[80%]">
       <SearchBar />
 
-      <Suspense fallback={<TrendingGamesLoading />}>
-        <TrendingGames />
-      </Suspense>
+      <GameOfWeek />
+
+      {/* <RandomGame /> */}
+
+      <TrendingGames />
 
       {/* <CardLoading /> */}
 

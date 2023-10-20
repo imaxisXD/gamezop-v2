@@ -12,8 +12,6 @@ function SearchBar() {
                 >
                     <Heart fill="#fe0001" stroke="#9ba3af" strokeWidth={0.1} className="h-5 w-5" />
                     <span className="text-fontcolor group-hover:text-white transition duration-150 font-light">My Favourites</span>
-                    <div className="absolute right-0 top-0 h-2 w-2 text-center rounded-full bg-red-600 text-[11px] font-medium text-white">
-                    </div>
                 </div>
                 <div
                     className="group transition duration-150 hover:bg-opacity-70 hover:border-sky-600 

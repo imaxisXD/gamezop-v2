@@ -17,7 +17,7 @@ export async function GameCard(
     const myBlurDataUrl = await getBase64(`https://static.gamezop.com/${gameData?.code}/square.png`);
 
     return (
-        <div className="h-full w-full rounded-md py-2 cursor-pointer border-b-2 border-transparent truncate hover:shadow-md hover:border-amber-300 flex flex-col items-center justify-center bg-[#212026] hover:shadow-orange-600 hover:text-white transition duration-300">
+        <div className="h-full w-full rounded-md py-2 cursor-pointer border-b-2 border-transparent truncate shadow-md hover:border-amber-300 flex flex-col items-center justify-center bg-[#212026] shadow-orange-600 hover:text-white transition duration-300">
             <div className="relative cursor-pointer h-full w-full rounded-md flex justify-center items-center">
                 <div className="relative rounded-md h-full w-11/12 items-center flex justify-center">
                     <Image src={`https://static.gamezop.com/${gameData?.code || gameCode}/square.png`}
@@ -33,7 +33,6 @@ export async function GameCard(
                         sizes="100vw"
                         blurDataURL={myBlurDataUrl}
                     />
-
                 </div>
                 <div className="absolute flex flex-col top-0 h-full w-full text-black rounded-md text-center justify-center items-center transition duration-150 bg-gray-700 bg-opacity-70
             hover:opacity-100 opacity-0
