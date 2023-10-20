@@ -25,8 +25,9 @@ export default async function Home() {
     <main className="flex min-h-screen px-11 gap-10 flex-col items-center justify-center text-left w-[80%]">
       <SearchBar />
 
-      <GameOfWeek />
-
+      <Suspense fallback={<GameOfWeekLoading />}>
+        <GameOfWeek />
+      </Suspense>
       {/* <RandomGame /> */}
 
       <TrendingGames />
