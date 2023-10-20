@@ -1,6 +1,4 @@
 export default async function CardLoading() {
-    // await new Promise(resolve => setTimeout(resolve, 20000));
-
     return (
         <div
             className={`flex flex-col gap-3 items-center w-full rounded-md isolate

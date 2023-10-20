@@ -5,6 +5,7 @@ import { Crown, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default async function GameOfWeek() {
+    await new Promise(resolve => setTimeout(resolve, 20000));
     const results: GameData = await getData();
     const allGames = results.data.games;
     const gameOfTheWeekCode = results.data.gameOfTheWeek;
