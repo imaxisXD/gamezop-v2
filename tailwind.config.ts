@@ -22,7 +22,7 @@ const config: Config = {
       },
       colors: {
         'background': '#14181d',
-        'navbar': 'rgba(19, 18, 23,0.4)',
+        'navbar': 'rgba(19, 18, 23)',
         'fontcolor': '#9ba3af',
         'bordercolor': '#2c2b33',
       },

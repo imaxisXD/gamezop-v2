@@ -13,8 +13,8 @@ import NewlyAddedLoading from "@/components/layout/newlyadded/newlyadded-loading
 
 export default async function Home() {
   return (
-    <main className="flex min-h-screen z-20 px-11 gap-10 flex-col items-center justify-center text-left w-[80%]"
-    >
+    <main className="space-y-8">
+
       <SearchBar />
 
       <Suspense fallback={<GameOfWeekLoading />}>
@@ -31,5 +31,6 @@ export default async function Home() {
 
 
     </main>
+
   )
 }

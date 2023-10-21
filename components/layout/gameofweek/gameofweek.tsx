@@ -20,7 +20,7 @@ export default async function GameOfWeek() {
                     src={imageUrl}
                     fill
                     alt={`${gameOfTheWeekDataObj?.name}`}
-                    className="object-cover rounded-lg z-10"
+                    className="object-cover rounded-lg"
                     placeholder="blur"
                     sizes="(min-width: 480px ) 50vw,
                       (min-width: 728px) 33vw,
