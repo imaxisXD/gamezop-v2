@@ -1,6 +1,8 @@
+import CardLoading from "@/components/ui/game-card/card-loading";
 import GameCard from "@/components/ui/game-card/game-card";
 import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
+import { Suspense } from "react";
 
 export default async function NewlyAdded() {
     const results: GameData = await getData();
@@ -22,7 +24,9 @@ export default async function NewlyAdded() {
                         className={`row-span-1 rounded-xl md:${index === 3 || index === 9 ? "col-span-2" : ""
                             }`}
                     >
-                        <GameCard gameData={game} />
+                        <Suspense fallback={<CardLoading />} >
+                            <GameCard gameData={game} />
+                        </Suspense>
                     </div>
                 ))}
             </div>
