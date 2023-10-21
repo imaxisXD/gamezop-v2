@@ -5,7 +5,6 @@ import { Crown, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default async function GameOfWeek() {
-    // await new Promise(resolve => setTimeout(resolve, 20000));
     const results: GameData = await getData();
     const allGames = results.data.games;
     const gameOfTheWeekCode = results.data.gameOfTheWeek;
@@ -20,13 +19,11 @@ export default async function GameOfWeek() {
                     fill
                     alt={`${gameOfTheWeekDataObj?.name}`}
                     className="object-cover rounded-lg z-10"
-                    style={{
-                        transform: 'translate3d(0, 0, 0)',
-                        width: '100%',
-                        height: '100%',
-                    }}
                     placeholder="blur"
-                    sizes="100vw"
+                    sizes="(min-width: 480px ) 50vw,
+                      (min-width: 728px) 33vw,
+                      (min-width: 976px) 25vw,
+                      100vw"
                     blurDataURL={myBlurDataUrl}
                 />
             </div>

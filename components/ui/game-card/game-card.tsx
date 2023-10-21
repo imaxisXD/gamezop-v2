@@ -26,14 +26,12 @@ export async function GameCard(
                         fill
                         alt={`${gameData?.name}`}
                         className="object-cover rounded-lg"
-                        style={{
-                            transform: 'translate3d(0, 0, 0)',
-                            width: '100%',
-                            height: '100%',
-                        }}
                         placeholder="blur"
-                        sizes="100vw"
                         blurDataURL={myBlurDataUrl}
+                        sizes="(min-width: 480px ) 50vw,
+                      (min-width: 728px) 33vw,
+                      (min-width: 976px) 25vw,
+                      100vw"
                     />
                 </div>
                 <div className="absolute flex flex-col top-0 h-full w-11/12 text-black rounded-md text-center justify-center items-center transition duration-150 bg-gray-700 bg-opacity-70

@@ -13,7 +13,7 @@ export default async function TrendingGames() {
         return allGames.find(game => game.code === code);
     });
     return (
-        <section id="trending" className="bg-page-gradient h-fit w-full rounded-md bg-opacity-40 drop-shadow-md backdrop-blur-lg">
+        <section id="trending" className="bg-page-gradient h-screen w-full rounded-md bg-opacity-40 drop-shadow-md backdrop-blur-lg">
             <div className="w-full grid gap-4 h-full bg-opacity-40 bg-slate-500/5  xs:grid-cols-2 xs:p-8 md:grid-cols-4 lg:gap-6 rounded-xl">
                 <h1 className="text-4xl [text-shadow:1px_1px_2px_var(--tw-shadow-color)] shadow-blue-500 font-extrabold tracking-wider text-pink-500 xs:col-span-2 xs:grid xs:gap-4 xs:grid-cols-2 md:col-span-3 md:text-5xl md:grid-cols-3 lg:text-7xl">
                     <span className="md:col-span-2">Trending Games</span>
