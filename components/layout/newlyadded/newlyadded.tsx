@@ -13,7 +13,7 @@ export default async function NewlyAdded() {
     });
 
     return (
-        <section id="newly-added" className="w-full backdrop-blur-lg flex flex-col justify-center items-center text-left rounded-md bg-opacity-40 bg-newly-gradient drop-shadow-md py-5">
+        <section id="newly-added" className="w-full backdrop-blur-lg h-1/3 flex flex-col justify-center items-center text-left rounded-md bg-opacity-40 bg-newly-gradient py-5">
             <h1 className="text-4xl w-full md:text-5xl lg:text-7xl px-10 py-5 font-extrabold tracking-wider text-yellow-400 text-left">
                 Newly added <br />Games
             </h1>

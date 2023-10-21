@@ -14,10 +14,7 @@
     "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-particles": "^2.12.2",
-    "sonner": "^1.0.3",
-    "tsparticles-engine": "^2.12.0",
-    "tsparticles-preset-snow": "^2.12.0"
+    "sonner": "^1.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
