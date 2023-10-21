@@ -1,44 +1,37 @@
-import SearchBar from "@/components/layout/navbar/navbar";
+import SearchBar from "@/components/layout/searchbar";
 import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
-import TrendingGames from "@/components/ui/trending/trending-game";
+import TrendingGames from "@/components/layout/trending/trending-game";
 import { Suspense } from "react";
-import TrendingGamesLoading from "@/components/ui/trending/trending-loading";
-import GameOfWeek from "@/components/ui/gameofweek/gameofweek";
+import TrendingGamesLoading from "@/components/layout/trending/trending-loading";
+import GameOfWeek from "@/components/layout/gameofweek/gameofweek";
 import RandomGame from "@/components/ui/randomgame";
-import GameOfWeekLoading from "@/components/ui/gameofweek/gameofweek-loading";
+import GameOfWeekLoading from "@/components/layout/gameofweek/gameofweek-loading";
+import NewlyAdded from "@/components/layout/newlyadded/newlyadded";
+import NewlyAddedLoading from "@/components/layout/newlyadded/newlyadded-loading";
+
 
 
 export default async function Home() {
-  const results: GameData = await getData();
-
-  const adventureGames = results.data.games.filter(game => game.categories.includes('adventure'));
-  const actionGames = results.data.games.filter(game => game.categories.includes('action'));
-  const sportsRacingGames = results.data.games.filter(game => game.categories.includes('sportsRacing'));
-  const arcadeGames = results.data.games.filter(game => game.categories.includes('arcade'));
-  const puzzleLogicGames = results.data.games.filter(game => game.categories.includes('puzzleLogic'));
-  const strategyGames = results.data.games.filter(game => game.categories.includes('strategy'));
-
-
-
   return (
-    <main className="flex min-h-screen px-11 gap-10 flex-col items-center justify-center text-left w-[80%]">
+    <main className="flex min-h-screen z-20 px-11 gap-10 flex-col items-center justify-center text-left w-[80%]"
+      style={{ scrollBehavior: 'smooth' }}
+    >
       <SearchBar />
 
-      <Suspense key={'ss'} fallback={<GameOfWeekLoading />}>
+      <Suspense fallback={<GameOfWeekLoading />}>
         <GameOfWeek />
       </Suspense>
-      {/* <RandomGame /> */}
 
-      <TrendingGames />
+      <Suspense fallback={<TrendingGamesLoading />}>
+        <TrendingGames />
+      </Suspense>
 
-      {/* <CardLoading /> */}
+      <Suspense fallback={<NewlyAddedLoading />}>
+        <NewlyAdded />
+      </Suspense>
 
-      {/* <div>
-        {adventureGames.map((game) => (
-          <GameCard gameData={game} key={game.code} />
-        ))}
-      </div> */}
+
     </main>
   )
 }

@@ -17,13 +17,15 @@ export async function GameCard(
     const myBlurDataUrl = await getBase64(`https://static.gamezop.com/${gameData?.code}/square.png`);
 
     return (
-        <div className="h-full w-full rounded-md py-2 cursor-pointer border-b-2 border-transparent truncate shadow-md hover:border-amber-300 flex flex-col items-center justify-center bg-[#212026] shadow-orange-600 hover:text-white transition duration-300">
+        <a
+            href={`https://www.gamezop.com/game/${gameData?.code}`}
+            target="_blank" className="h-full w-full rounded-lg py-2 cursor-pointer border-b-2 truncate bg-opacity-70 hover:border-pink-500 flex flex-col items-center justify-center bg-[#0e0b12] backdrop-blur-sm  border-slate-300/20 hover:text-white transition duration-300">
             <div className="relative cursor-pointer h-full w-full rounded-md flex justify-center items-center">
                 <div className="relative rounded-md h-full w-11/12 items-center flex justify-center">
                     <Image src={`https://static.gamezop.com/${gameData?.code || gameCode}/square.png`}
                         fill
                         alt={`${gameData?.name}`}
-                        className="object-cover rounded-md"
+                        className="object-cover rounded-lg"
                         style={{
                             transform: 'translate3d(0, 0, 0)',
                             width: '100%',
@@ -34,7 +36,7 @@ export async function GameCard(
                         blurDataURL={myBlurDataUrl}
                     />
                 </div>
-                <div className="absolute flex flex-col top-0 h-full w-full text-black rounded-md text-center justify-center items-center transition duration-150 bg-gray-700 bg-opacity-70
+                <div className="absolute flex flex-col top-0 h-full w-11/12 text-black rounded-md text-center justify-center items-center transition duration-150 bg-gray-700 bg-opacity-70
             hover:opacity-100 opacity-0
             ">
                     <Play fill={`rgb(22 163 74)`} strokeWidth={0.5} className="h-10 w-10" />
@@ -43,7 +45,7 @@ export async function GameCard(
                 </div>
             </div>
             <h3 className="text-sm truncate py-1">{gameData?.name}</h3>
-        </div>
+        </a>
     )
 }
 

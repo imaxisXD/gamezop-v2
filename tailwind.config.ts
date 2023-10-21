@@ -22,9 +22,19 @@ const config: Config = {
       },
       colors: {
         'background': '#14181d',
-        'navbar': '#212026',
-        'fontcolor': '#9ba3af'
+        'navbar': 'rgba(19, 18, 23,0.4)',
+        'fontcolor': '#9ba3af',
+        'bordercolor': '#2c2b33',
       },
+      backgroundImage: {
+        "page-gradient":
+          "radial-gradient(ellipse 129% 111% at -4% 17%,rgba(66,21,89, 0.3), transparent)",
+        "section-gradient":
+          "radial-gradient(50% 50% at 50% 50%,rgb(197 52 211 / 20%) 0%,rgba(171,171,171,0) 100%)",
+        "newly-gradient":
+          "radial-gradient(ellipse 129% 111% at -4% 17%,rgba(208, 177, 53, 0.14), transparent)",
+      }
+
     },
   },
   plugins: [],

@@ -17,6 +17,7 @@ function Heart(
 
     function handleClick(e: React.MouseEvent) {
         e.stopPropagation();
+        e.preventDefault();
         //Add the game code to local storage
         try {
             const favGamesObj = localStorage.getItem("favGames");

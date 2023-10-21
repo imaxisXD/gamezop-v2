@@ -5,7 +5,7 @@ import { Crown, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 export default async function GameOfWeek() {
-    await new Promise(resolve => setTimeout(resolve, 20000));
+    // await new Promise(resolve => setTimeout(resolve, 20000));
     const results: GameData = await getData();
     const allGames = results.data.games;
     const gameOfTheWeekCode = results.data.gameOfTheWeek;
@@ -14,7 +14,7 @@ export default async function GameOfWeek() {
     const imageUrl = `https://static.gamezop.com/${gameOfTheWeekDataObj?.code}/wall.png`
     const myBlurDataUrl = await getBase64(imageUrl);
     return (
-        <div className="h-96 w-11/12 relative rounded-lg group border border-navbar">
+        <section id="game-of-week" className="h-96 w-full relative rounded-lg group border border-navbar">
             <div className="relative h-full w-full p-2 flex flex-row items-center justify-center rounded-lg">
                 <Image src={imageUrl}
                     fill
@@ -50,7 +50,7 @@ export default async function GameOfWeek() {
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
