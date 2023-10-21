@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className='bg-background text-fontcolor flex bg-page-gradient'>
-        <ParticleSection />
+        {/* <ParticleSection /> */}
         <Toaster />
         <SideNav />
         {children}

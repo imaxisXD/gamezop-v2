@@ -13,22 +13,51 @@ export default async function NewlyAdded() {
     });
 
     return (
-        <section id="newly-added" className="w-full h-screen backdrop-blur-lg flex flex-col justify-center items-center text-left rounded-md bg-opacity-40 bg-newly-gradient drop-shadow-md py-5">
-            <h1 className="text-3xl h-fit w-full text-left px-10 py-5 font-extrabold tracking-wider text-yellow-400 xs:col-span-2  md:col-span-3 md:text-5xl md:grid-cols-3 lg:text-7xl">
+        <section id="newly-added" className="w-full backdrop-blur-lg flex flex-col justify-center items-center text-left rounded-md bg-opacity-40 bg-newly-gradient drop-shadow-md py-5">
+            <h1 className="text-4xl w-full md:text-5xl lg:text-7xl px-10 py-5 font-extrabold tracking-wider text-yellow-400 text-left">
                 Newly added <br />Games
             </h1>
-            <div className="w-11/12 h-screen grid auto-rows-[192px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {newlyAddedGamesArray.map((game, index) => (
-                    <div
-                        key={index}
-                        className={`row-span-1 rounded-xl md:${index === 3 || index === 9 ? "col-span-2" : ""
+            <div className="w-11/12 grid auto-rows-[192px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+                <div
+                    key={newlyAddedGamesArray[0]?.code}
+                    className={`row-span-1 rounded-xl 
                             }`}
-                    >
-                        <Suspense fallback={<CardLoading />} >
-                            <GameCard gameData={game} />
-                        </Suspense>
-                    </div>
-                ))}
+                >
+                    <Suspense fallback={<CardLoading />} >
+                        <GameCard gameData={newlyAddedGamesArray[0]} />
+                    </Suspense>
+                </div>
+                <div
+                    key={newlyAddedGamesArray[1]?.code}
+                    className={`row-span-1 rounded-xl 
+                            }`}
+                >
+                    <Suspense fallback={<CardLoading />} >
+                        <GameCard gameData={newlyAddedGamesArray[1]} />
+                    </Suspense>
+                </div>
+                <div
+                    key={newlyAddedGamesArray[2]?.code}
+                    className={`row-span-1 rounded-xl 
+                            }`}
+                >
+                    <Suspense fallback={<CardLoading />} >
+                        <GameCard gameData={newlyAddedGamesArray[2]} />
+                    </Suspense>
+                </div>
+                <div
+                    key={newlyAddedGamesArray[3]?.code}
+                    className={`row-span-1 rounded-xl md:col-span-2
+                            }`}
+                >
+                    <Suspense fallback={<CardLoading />} >
+                        <GameCard gameData={newlyAddedGamesArray[3]} />
+                    </Suspense>
+                </div>
+
+
+                <div className="row-span-1 rounded-xl border"></div>
             </div>
         </section>
     )

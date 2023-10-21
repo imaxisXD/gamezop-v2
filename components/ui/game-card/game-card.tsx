@@ -17,9 +17,11 @@ export async function GameCard(
     const myBlurDataUrl = await getBase64(`https://static.gamezop.com/${gameData?.code}/square.png`);
 
     return (
-        <a
-            href={`https://www.gamezop.com/game/${gameData?.code}`}
-            target="_blank" className="h-full w-full rounded-lg py-2 cursor-pointer border-b-2 truncate bg-opacity-70 hover:border-pink-500 flex flex-col items-center justify-center bg-[#0e0b12] backdrop-blur-sm  border-slate-300/20 hover:text-white transition duration-300">
+        // href={`https://www.gamezop.com/game/${gameData?.code}`}
+
+        // target="_blank"
+        <div
+            className="h-full w-full rounded-lg py-2 cursor-pointer border-b-2 truncate bg-opacity-70 hover:border-pink-500 flex flex-col items-center justify-center bg-[#0e0b12] backdrop-blur-sm  border-slate-300/20 hover:text-white transition duration-300">
             <div className="relative cursor-pointer h-full w-full rounded-md flex justify-center items-center">
                 <div className="relative rounded-md h-full w-11/12 items-center flex justify-center">
                     <Image src={`https://static.gamezop.com/${gameData?.code || gameCode}/square.png`}
@@ -43,7 +45,7 @@ export async function GameCard(
                 </div>
             </div>
             <h3 className="text-sm truncate py-1">{gameData?.name}</h3>
-        </a>
+        </div>
     )
 }
 
