@@ -4,6 +4,7 @@ import { GameData } from "@/utils/types";
 import { Crown, MoveRight } from "lucide-react";
 import Image from "next/image";
 
+
 export default async function GameOfWeek() {
     const results: GameData = await getData();
     const allGames = results.data.games;
@@ -15,7 +16,8 @@ export default async function GameOfWeek() {
     return (
         <section id="game-of-week" className="h-96 w-full relative rounded-lg group border border-navbar">
             <div className="relative h-full w-full p-2 flex flex-row items-center justify-center rounded-lg">
-                <Image src={imageUrl}
+                <Image
+                    src={imageUrl}
                     fill
                     alt={`${gameOfTheWeekDataObj?.name}`}
                     className="object-cover rounded-lg z-10"
