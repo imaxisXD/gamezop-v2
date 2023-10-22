@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className='bg-background overflow-y-scroll pb-36 text-fontcolor bg-page-gradient'>
-        <Toaster />
+        <Toaster richColors />
         <SideNav />
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">

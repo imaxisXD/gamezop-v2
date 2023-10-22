@@ -2,6 +2,7 @@ import CardLoading from "@/components/ui/game-card/card-loading";
 import GameCard from "@/components/ui/game-card/game-card";
 import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
+import { ChevronRightCircle } from "lucide-react";
 import { Suspense } from "react";
 
 export default async function NewlyAdded() {
@@ -57,7 +58,10 @@ export default async function NewlyAdded() {
                 </div>
 
 
-                <div className="row-span-1 rounded-xl border"></div>
+                <div className="row-span-1 font-light transition duration-300 gap-1 cursor-pointer hover:bg-opacity-80 rounded-xl bg-[#0e0b12] text-white hover:text-yellow-400 flex flex-col items-center justify-center">
+                    <ChevronRightCircle className="h-14 w-14" width={0.1} />
+                    <span>View more</span>
+                </div>
             </div>
         </section>
     )

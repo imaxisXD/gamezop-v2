@@ -3,6 +3,7 @@ import getBase64 from "@/utils/get-blur-data-url"
 import Heart from "../heart"
 import { Game } from "@/utils/types"
 import { Play } from "lucide-react"
+import Link from "next/link"
 export async function GameCard(
     {
         gameData,
@@ -17,10 +18,9 @@ export async function GameCard(
     const myBlurDataUrl = await getBase64(`https://static.gamezop.com/${gameData?.code}/square.png`);
 
     return (
-        // href={`https://www.gamezop.com/game/${gameData?.code}`}
-
-        // target="_blank"
-        <div
+        <Link
+            href={`https://www.gamezop.com/game/${gameData?.code}`}
+            target="_blank"
             className="h-full w-full rounded-lg py-2 cursor-pointer border-b-2 truncate bg-opacity-70 hover:border-pink-500 flex flex-col items-center justify-center bg-[#0e0b12] backdrop-blur-sm  border-slate-300/20 hover:text-white transition duration-300">
             <div className="relative cursor-pointer h-full w-full rounded-md flex justify-center items-center">
                 <div className="relative rounded-md h-full w-11/12 items-center flex justify-center">
@@ -45,7 +45,7 @@ export async function GameCard(
                 </div>
             </div>
             <h3 className="text-sm truncate py-1">{gameData?.name}</h3>
-        </div>
+        </Link>
     )
 }
 

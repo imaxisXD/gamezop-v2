@@ -33,6 +33,8 @@ const config: Config = {
           "radial-gradient(50% 50% at 50% 50%,rgb(197 52 211 / 20%) 0%,rgba(171,171,171,0) 100%)",
         "newly-gradient":
           "radial-gradient(ellipse 129% 111% at -4% 17%,rgba(208, 177, 53, 0.14), transparent)",
+        "randomgame-gradient":
+          "radial-gradient(ellipse 129% 111% at -4% 17%,rgba(59, 130, 246, 0.14), transparent)"
       }
 
     },

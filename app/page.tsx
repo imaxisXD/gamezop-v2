@@ -8,10 +8,14 @@ import GameOfWeek from "@/components/layout/gameofweek/gameofweek";
 import GameOfWeekLoading from "@/components/layout/gameofweek/gameofweek-loading";
 import NewlyAdded from "@/components/layout/newlyadded/newlyadded";
 import NewlyAddedLoading from "@/components/layout/newlyadded/newlyadded-loading";
+import RandomGame from "@/components/layout/randomgame";
 
 
 
 export default async function Home() {
+  const results: GameData = await getData();
+  const allGames = results.data.games;
+
   return (
     <main className="space-y-8">
 
@@ -29,7 +33,7 @@ export default async function Home() {
         <NewlyAdded />
       </Suspense>
 
-
+      <RandomGame games={allGames} />
     </main>
 
   )
