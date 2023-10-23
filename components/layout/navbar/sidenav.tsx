@@ -54,7 +54,7 @@ export default function SideNav() {
                 <div className="mx-auto w-full">
                     <h2 className="font-bold text-white/30 leading-loose text-center cursor-default py-4">CATEGORIES</h2>
 
-                    <Categories />
+                    <Categories close={close} />
 
                 </div>
             </div>

@@ -76,7 +76,7 @@ function Search({
                         <p className="p-2 border border-white/5 h-28 flex items-center justify-center bg-black rounded-md text-white text-center">No games found.</p>
                     ) : (
                         <ul
-                            className='max-h-56 overflow-auto gap-1'
+                            className='max-h-56 overflow-auto gap-1 no-scrollbar'
                         >
                             {filteredGames.map((game) => (
                                 <Link
