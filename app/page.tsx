@@ -1,4 +1,3 @@
-import SearchBar from "@/components/layout/searchbar";
 import { getData } from "@/utils/fetchdata";
 import { GameData } from "@/utils/types";
 import TrendingGames from "@/components/layout/trending/trending-game";
@@ -15,12 +14,8 @@ import RandomGame from "@/components/layout/randomgame";
 export default async function Home() {
   const results: GameData = await getData();
   const allGames = results.data.games;
-
   return (
     <main className="space-y-8">
-
-
-
       <Suspense fallback={<GameOfWeekLoading />}>
         <GameOfWeek />
       </Suspense>
@@ -28,12 +23,12 @@ export default async function Home() {
       <Suspense fallback={<TrendingGamesLoading />}>
         <TrendingGames />
       </Suspense>
+
       <RandomGame games={allGames} />
+
       <Suspense fallback={<NewlyAddedLoading />}>
         <NewlyAdded />
       </Suspense>
-
-
     </main>
 
   )
