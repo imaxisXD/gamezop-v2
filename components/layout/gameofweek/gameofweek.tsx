@@ -29,7 +29,7 @@ export default async function GameOfWeek() {
                     blurDataURL={myBlurDataUrl}
                 />
             </div>
-            <div className="h-1/4 w-full rounded-lg z-20 absolute bottom-0 flex flex-row items-center justify-around p-2 backdrop-blur-md bg-black/40">
+            <div className="h-1/4 w-full rounded-lg z-10 absolute bottom-0 flex flex-row items-center justify-around p-2 backdrop-blur-md bg-black/40">
                 <div className="rounded-lg flex flex-col items-start w-1/2 p-2">
                     <h2 className=" text-purple-500 md:text-xl flex justify-center gap-2 text-base">
                         <Crown className="text-purple-200" fill="#9333ea" />

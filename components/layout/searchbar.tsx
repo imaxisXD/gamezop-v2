@@ -8,14 +8,14 @@ export default async function SearchBar() {
     const allGames = results.data.games
 
     return (
-        <div className="flex items-center justify-between flex-wrap py-4 gap-10 px-2 w-full">
+        <div className="flex items-center justify-center flex-wrap-reverse sm:justify-between py-4 gap-10 px-2 w-full">
             <Search allGames={allGames} />
             <div
-                className="relative w-56 py-2 group transition duration-300 hover:bg-opacity-70 hover:border-red-600 
+                className="relative w-44 py-2 group transition duration-300 hover:bg-opacity-70 hover:border-red-600 
                 border border-navbar cursor-pointer flex items-center justify-center gap-2 bg-rose-800/10 hover:bg-rose-800/10 rounded-sm"
             >
                 <Heart fill="#fe0001" stroke="#9ba3af" strokeWidth={0.1} className="h-5 w-5" />
-                <span className="text-fontcolor group-hover:text-white transition duration-150 text-sm">My Favourites</span>
+                <span className="text-fontcolor group-hover:text-white transition duration-150 text-sm">Favourites</span>
             </div>
         </div>
     )

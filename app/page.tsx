@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <main className="space-y-8">
 
-      <SearchBar />
+
 
       <Suspense fallback={<GameOfWeekLoading />}>
         <GameOfWeek />
@@ -28,12 +28,12 @@ export default async function Home() {
       <Suspense fallback={<TrendingGamesLoading />}>
         <TrendingGames />
       </Suspense>
-
+      <RandomGame games={allGames} />
       <Suspense fallback={<NewlyAddedLoading />}>
         <NewlyAdded />
       </Suspense>
 
-      <RandomGame games={allGames} />
+
     </main>
 
   )
