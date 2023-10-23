@@ -30,3 +30,11 @@ export type GameData = {
     error: string;
     code: string;
 }
+
+export type FavGameData = {
+    gameCode: string;
+    gameName: string;
+    image?: string;
+    blurImg: string;
+    url?: string;
+};

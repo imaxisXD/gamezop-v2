@@ -1,40 +1,32 @@
 import Image from "next/image"
-import getBase64 from "@/utils/get-blur-data-url"
 import Heart from "../heart"
-import { Game } from "@/utils/types"
 import { Play } from "lucide-react"
 import Link from "next/link"
-export async function GameCard(
+export function GameCardClientSide(
     {
-        gameData,
         gameCode,
         blurData,
         gameName
     }: {
-        gameData?: Game,
-        gameCode?: string,
-        blurData?: string,
-        gameName?: string,
+
+        gameCode: string,
+        blurData: string,
+        gameName: string,
     }
 ) {
-    let myBlurDataUrl = blurData
-    if (!blurData) {
-        myBlurDataUrl = await getBase64(`https://static.gamezop.com/${gameData?.code || gameCode}/square.png`);
-    }
-
     return (
         <Link
-            href={`https://www.gamezop.com/game/${gameData?.code || gameCode}`}
+            href={`https://www.gamezop.com/game/${gameCode}`}
             target="_blank"
             className="h-full w-full rounded-lg py-2 cursor-pointer border-b-2 truncate bg-opacity-70 hover:border-pink-500 flex flex-col items-center justify-center bg-[#0e0b12] backdrop-blur-sm  border-slate-300/20 hover:text-white transition duration-300">
             <div className="relative cursor-pointer h-full w-full rounded-md flex justify-center items-center">
                 <div className="relative rounded-md h-full w-11/12 items-center flex justify-center">
-                    <Image src={`https://static.gamezop.com/${gameData?.code || gameCode}/square.png`}
+                    <Image src={`https://static.gamezop.com/${gameCode}/square.png`}
                         fill
-                        alt={`${gameData?.name}`}
+                        alt={gameName}
                         className="object-cover rounded-lg"
                         placeholder="blur"
-                        blurDataURL={myBlurDataUrl || blurData}
+                        blurDataURL={blurData}
                         sizes="(min-width: 480px ) 50vw,
                       (min-width: 728px) 33vw,
                       (min-width: 976px) 25vw,
@@ -47,15 +39,15 @@ export async function GameCard(
                     <Play fill={`rgb(22 163 74)`} strokeWidth={0.5} className="h-10 w-10" />
                     <p className="text-xs text-white font-bold">Click to play</p>
                     <Heart
-                        gameCode={gameData?.code || gameCode}
-                        gameName={gameData?.name}
-                        blurdata={myBlurDataUrl || ''}
+                        gameCode={gameCode}
+                        gameName={gameName}
+                        blurdata={blurData}
                     />
                 </div>
             </div>
-            <h3 className="text-sm truncate py-1">{gameData?.name || gameName}</h3>
+            <h3 className="text-sm truncate py-1">{gameName}</h3>
         </Link>
     )
 }
 
-export default GameCard
+export default GameCardClientSide;

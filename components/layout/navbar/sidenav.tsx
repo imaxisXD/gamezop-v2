@@ -24,13 +24,13 @@ export default function SideNav() {
                 className="group absolute right-0 top-4 flex h-14 items-center gap-x-2 px-4 lg:hidden"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="font-medium text-gray-100 group-hover:text-gray-400">
+                <div className="font-medium group-hover:text-white">
                     Menu
                 </div>
                 {isOpen ? (
-                    <XCircle className="block w-6 text-gray-400" />
+                    <XCircle className="block w-6 text-gray-400 group-hover:text-white" />
                 ) : (
-                    <Menu className="block w-6 text-gray-400" />
+                    <Menu className="block w-6 text-gray-400 group-hover:text-white" />
                 )}
             </button>
             <div
@@ -52,10 +52,10 @@ export default function SideNav() {
                     <h2 className="text-fontcolor group-hover:text-yellow-400">Newly Added</h2>
                 </Link>
                 <div className="mx-auto w-full">
-                    <h2 className="font-bold text-white/30 leading-loose text-center cursor-default py-4">CATEGORIES</h2>
-
+                    <h2 className="font-bold text-white/30 leading-loose text-center cursor-default py-4">
+                        CATEGORIES
+                    </h2>
                     <Categories close={close} />
-
                 </div>
             </div>
         </nav>
