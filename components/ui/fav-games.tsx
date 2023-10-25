@@ -40,7 +40,7 @@ function FavGames() {
         ) : (
             <section className="flex items-center justify-center flex-col w-full gap-2">
                 <Lottie animationData={nothingInFavAnimation} autoplay={true} className='h-96'></Lottie>
-                <h3 className='text-2xl text-blue-500'>Nothing added to favorite! </h3>
+                <h3 className='text-2xl text-blue-500'>Nothing added to favorite!</h3>
                 <Link
                     href="/"
                     className="px-2 py-2 rounded-md bg-yellow-400 text-black hover:bg-opacity-80"

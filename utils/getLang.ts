@@ -14,4 +14,4 @@ const dictionaries = {
     vi: () => import('@/dictionaries/vi.json').then(module => module.default)
 }
 
-export const getLang = async (locale: Locale) => dictionaries[locale]()
+export const getLang = async (locale: Locale) => dictionaries[locale]();

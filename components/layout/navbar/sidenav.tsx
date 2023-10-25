@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { Categories, NavBarTranslation } from "@/utils/types";
+import { Categories, Translation } from "@/utils/types";
 import { usePathname } from "next/navigation";
 import { Locale } from "@/i18n.config";
 
@@ -12,7 +12,7 @@ import { Locale } from "@/i18n.config";
 export default function SideNav({
     translations, categories, lang
 }: {
-    translations: NavBarTranslation,
+    translations: Translation,
     categories: Categories,
     lang: Locale
 }) {

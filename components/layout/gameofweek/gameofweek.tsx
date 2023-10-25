@@ -1,12 +1,17 @@
+import { Locale } from "@/i18n.config";
 import { getData } from "@/utils/fetchdata";
 import getBase64 from "@/utils/get-blur-data-url";
+import { getLang } from "@/utils/getLang";
 import { GameData } from "@/utils/types";
 import { Crown, MoveRight } from "lucide-react";
 import Image from "next/image";
 
 
-export default async function GameOfWeek() {
-    const results: GameData = await getData();
+export default async function GameOfWeek(
+    { lang }: { lang: Locale }
+) {
+    const results: GameData = await getData(lang);
+    const Translations = await getLang(lang);
     const allGames = results.data.games;
     const gameOfTheWeekCode = results.data.gameOfTheWeek;
     const gameOfTheWeekDataArray = allGames.filter(game => game.code === gameOfTheWeekCode);
@@ -33,7 +38,7 @@ export default async function GameOfWeek() {
                 <div className="rounded-lg flex flex-col items-start w-1/2 p-2">
                     <h2 className=" text-purple-500 md:text-xl flex justify-center gap-2 text-base">
                         <Crown className="text-purple-200" fill="#9333ea" />
-                        Game of the Week
+                        {Translations.gameofweek}
                     </h2>
                     <h1 className="text-white font-extrabold tracking-wider md:text-3xl">{gameOfTheWeekDataObj.name}</h1>
                 </div>
@@ -44,7 +49,7 @@ export default async function GameOfWeek() {
                         className="relative group transition duration-150 hover:bg-opacity-70 hover:border-green-600 
                 border-green-400 border cursor-pointer w-32 flex items-center justify-center gap-1 bg-navbar px-5 py-1 rounded-md"
                     >
-                        <span className="text-fontcolor group-hover:text-white transition duration-150 font-light xs:text-xs md:text-base">Play</span>
+                        <span className="text-fontcolor group-hover:text-white transition duration-150 font-light xs:text-xs md:text-base">{Translations.play}</span>
                         <MoveRight stroke="rgb(74 222 128)" strokeWidth={1} className="h-5 w-5" />
                     </a>
                 </div>

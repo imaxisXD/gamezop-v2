@@ -34,7 +34,7 @@ export default function RootLayout({
         <NavbarWrapper lang={params.lang} />
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-32 xs:pt-32 md:pt-32 lg:pt-16 lg:px-8">
-            <SearchBar />
+            <SearchBar lang={params.lang} />
             <div className='p-3.5 lg:p-6'>
               {children}
             </div>

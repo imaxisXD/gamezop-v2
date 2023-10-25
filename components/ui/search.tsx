@@ -7,8 +7,10 @@ import Link from 'next/link';
 
 function Search({
     allGames,
+    translations
 }: {
     allGames: Game[];
+    translations: string;
 }) {
     const [searchInput, setSearchInput] = useState('');
     const [filteredGames, setFilteredGames] = useState<Game[]>([]);
@@ -59,7 +61,7 @@ function Search({
                 <input
                     ref={searchInputRef}
                     className="outline-none bg-transparent w-full text-sm text-white font-light"
-                    placeholder="Search games"
+                    placeholder={translations}
                     value={searchInput}
                     onChange={handleSearch}
                 />

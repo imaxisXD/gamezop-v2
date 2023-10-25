@@ -1,9 +1,23 @@
 {
-    "navbar": {
-        "menu": "Danh mục",
-        "categories": "Danh mục",
-        "gameofweek": "Trò chơi của tuần",
-        "trendinggame": "Trò chơi phổ biến",
-        "newlyadded": "Mới thêm"
-    }
+    "menu": "Thực đơn",
+    "categories": "DANH MỤC",
+    "gameofweek": "Trò chơi của tuần",
+    "trendinggame": "Trò chơi phổ biến",
+    "newlyadded": "Mới thêm",
+    "trendinggame.subheading": "Hãy thử những trò chơi đang hot, được nhiều người yêu thích.",
+    "randomHeading": "Bối rối về việc chơi gì?",
+    "spinToplay": "Xoay để chơi",
+    "randomGame": "Trò chơi ngẫu nhiên",
+    "CTA": "Nhấp vào đây",
+    "play": "Chơi",
+    "game": "Trò chơi",
+    "viewMore": "Xem thêm",
+    "fav": "Yêu thích",
+    "addFav": "Thêm vào Trò chơi yêu thích của bạn!",
+    "nothingFav": "Không có gì được thêm vào mục ưa thích!",
+    "notaddedtofavError": "không được thêm vào mục ưa thích",
+    "favErrorMsg": "Trò chơi này không thể được thêm vào mục ưa thích của bạn. Vui lòng thử lại sau.",
+    "removeFav": "đã bị xóa khỏi mục ưa thích",
+    "addedtofav": "đã được thêm vào mục ưa thích",
+    "searchPlaceholde": "Tìm kiếm trò chơi"
 }

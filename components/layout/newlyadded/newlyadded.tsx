@@ -1,13 +1,18 @@
 import CardLoading from "@/components/ui/game-card/card-loading";
 import GameCard from "@/components/ui/game-card/game-card";
+import { Locale } from "@/i18n.config";
 import { getData } from "@/utils/fetchdata";
+import { getLang } from "@/utils/getLang";
 import { GameData } from "@/utils/types";
 import { ChevronRightCircle } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export default async function NewlyAdded() {
-    const results: GameData = await getData();
+export default async function NewlyAdded(
+    { lang }: { lang: Locale }
+) {
+    const results: GameData = await getData(lang);
+    const Translations = await getLang(lang)
     const newlyAddedGamesCodes = results.data.newlyAddedGames;
     const allGames = results.data.games;
     const newlyAddedGamesArray = newlyAddedGamesCodes.map(code => {
@@ -17,7 +22,7 @@ export default async function NewlyAdded() {
     return (
         <section id="newly-added" className="w-full backdrop-blur-lg h-1/3 flex flex-col justify-center items-center text-left rounded-md bg-opacity-40 bg-newly-gradient py-5">
             <h1 className="text-4xl w-full md:text-5xl lg:text-7xl px-10 py-5 font-extrabold tracking-wider text-yellow-400 text-left">
-                Newly added <br />Games
+                {Translations.newlyadded} <br />{Translations.game}
             </h1>
             <div className="w-11/12 grid auto-rows-[192px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 
@@ -63,7 +68,7 @@ export default async function NewlyAdded() {
                     href={`/new-games`}
                     className="row-span-1 font-light transition duration-300 gap-1 cursor-pointer hover:bg-opacity-80 rounded-xl bg-[#0e0b12] text-white hover:text-yellow-400 flex flex-col items-center justify-center">
                     <ChevronRightCircle className="h-14 w-14" width={0.1} />
-                    View more
+                    {Translations.viewMore}
                 </Link>
             </div>
         </section>

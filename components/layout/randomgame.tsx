@@ -3,7 +3,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import spinAnimation from '../../styles/animations/spinthatwheel.json';
 import { useRef } from "react";
 import { toast } from "sonner";
-import { Game } from "@/utils/types";
+import { Game, Translation } from "@/utils/types";
 import Link from "next/link";
 import Image from "next/image";
 import { XCircleIcon } from "lucide-react";
@@ -11,9 +11,11 @@ import { XCircleIcon } from "lucide-react";
 
 const RandomGame = (
 	{
+		translations,
 		games
 	}: {
-		games: Game[]
+		translations: Translation;
+		games: Game[];
 	}
 ) => {
 
@@ -23,15 +25,11 @@ const RandomGame = (
 		return array[randomIndex];
 	}
 	const randomGame = getRandomObjectFromArray(games);
-
-
-
-
 	return (
 		<div className="bg-pink-600 p-4 text-white rounded-xl border-white/75 border-4 border-dashed flex items-center justify-around w-full ">
 			<div className="flex justify-start gap-3 flex-col">
-				<span className="text-lg">Confused on what to play ?</span>
-				<h1 className="text-3xl font-extrabold">Spin To Play <span className="text-yellow-400">Random Game</span></h1>
+				<span className="text-lg">{translations.randomHeading}</span>
+				<h1 className="text-3xl font-extrabold">{translations.spinToplay}<span className="text-yellow-400">{translations.randomGame}</span></h1>
 				<button onClick={() => lottieRef.current?.play()} className="px-3 mt-4 w-fit border-2 transition duration-300 border-transparent hover:bg-opacity-90 hover:border-blue-500 font-medium py-3 bg-gradient-to-br from-amber-300 to bg-yellow-500 rounded-md text-black">Spin the wheel</button>
 			</div>
 			<div className="h-72 w-64">
@@ -50,7 +48,7 @@ const RandomGame = (
 									"
 									>
 										<h2 className="text-xl text-white font-extrabold">{randomGame.name}</h2>
-										<span>Click here</span>
+										<span>{translations.CTA}</span>
 									</Link>
 								</div>
 								<button onClick={() => toast.dismiss(t)} className="absolute right-0 top-0 text-red-500 bg-red-200 rounded-full bg-opacity-25 hover:scale-110 transition duration-300">

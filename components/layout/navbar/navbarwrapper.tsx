@@ -13,12 +13,12 @@ export default async function NavbarWrapper(
             lang: Locale
         }
 ) {
-    const { navbar } = await getLang(lang);
+    const Translations = await getLang(lang);
     const results: GameData = await getData(lang);
     const categories = results.data.categories
 
     return (
-        <SideNav translations={navbar} categories={categories} lang={lang} />
+        <SideNav translations={Translations} categories={categories} lang={lang} />
     )
 }
 

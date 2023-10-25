@@ -40,10 +40,26 @@ export type FavGameData = {
 };
 
 
-export type NavBarTranslation = {
+export type Translation = {
     menu: string;
     categories: string;
     gameofweek: string;
     trendinggame: string;
     newlyadded: string;
+    "trendinggame.subheading": string;
+    randomHeading: string;
+    spinToplay: string;
+    randomGame: string;
+    CTA: string;
+    play: string;
+    game: string;
+    viewMore: string;
+    fav: string;
+    addFav: string;
+    nothingFav: string;
+    notaddedtofavError: string;
+    favErrorMsg: string;
+    removeFav: string;
+    addedtofav: string;
+    searchPlaceholde: string;
 }

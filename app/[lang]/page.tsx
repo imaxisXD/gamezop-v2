@@ -8,26 +8,31 @@ import GameOfWeekLoading from "@/components/layout/gameofweek/gameofweek-loading
 import NewlyAdded from "@/components/layout/newlyadded/newlyadded";
 import NewlyAddedLoading from "@/components/layout/newlyadded/newlyadded-loading";
 import RandomGame from "@/components/layout/randomgame";
+import { Locale } from "@/i18n.config";
+import { getLang } from "@/utils/getLang";
 
 
 
-export default async function Home() {
-  const results: GameData = await getData();
+export default async function Home(
+  { params }: { params: { lang: Locale } }
+) {
+  const results: GameData = await getData(params.lang);
+  const Translations = await getLang(params.lang);
   const allGames = results.data.games;
   return (
     <main className="space-y-8">
       <Suspense fallback={<GameOfWeekLoading />}>
-        <GameOfWeek />
+        <GameOfWeek lang={params.lang} />
       </Suspense>
 
       <Suspense fallback={<TrendingGamesLoading />}>
-        <TrendingGames />
+        <TrendingGames lang={params.lang} />
       </Suspense>
 
-      <RandomGame games={allGames} />
+      <RandomGame games={allGames} translations={Translations} />
 
       <Suspense fallback={<NewlyAddedLoading />}>
-        <NewlyAdded />
+        <NewlyAdded lang={params.lang} />
       </Suspense>
     </main>
 

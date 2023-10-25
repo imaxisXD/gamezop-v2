@@ -3,10 +3,15 @@ import { GameData } from "@/utils/types";
 import GameCard from "../../ui/game-card/game-card";
 import CardLoading from "../../ui/game-card/card-loading";
 import { Suspense } from "react";
+import { Locale } from "@/i18n.config";
+import { getLang } from "@/utils/getLang";
 
 
-export default async function TrendingGames() {
-    const results: GameData = await getData();
+export default async function TrendingGames(
+    { lang }: { lang: Locale }
+) {
+    const results: GameData = await getData(lang);
+    const Translations = await getLang(lang);
     const allGames = results.data.games;
     const trendingGameCodes = results.data.trendingGames;
     const trendingGames = trendingGameCodes.map(code => {
@@ -16,10 +21,10 @@ export default async function TrendingGames() {
         <section id="trending" className="bg-page-gradient w-full rounded-md bg-opacity-40 drop-shadow-md backdrop-blur-lg">
             <div className="w-full grid gap-4 bg-opacity-40 bg-slate-500/5 xs:grid-cols-2 xs:p-8 md:grid-cols-4 lg:gap-6 rounded-xl">
                 <h1 className="text-4xl [text-shadow:1px_1px_2px_var(--tw-shadow-color)] shadow-blue-500 font-extrabold tracking-wider text-pink-500 xs:col-span-2 xs:grid xs:gap-4 xs:grid-cols-2 md:col-span-3 md:text-5xl md:grid-cols-3 lg:text-7xl">
-                    <span className="md:col-span-2">Trending Games</span>
+                    <span className="md:col-span-2">{Translations.trendinggame}</span>
                 </h1>
                 <p className="xs:row-start-2 text-white xs:col-start-2 xs:self-center md:col-start-1 md:col-span-2 md:pr-12 md:text-lg hidden md:block">
-                    Try out the trending games, that are being loved by many.
+                    {Translations["trendinggame.subheading"]}
                 </p>
                 <div className="h-16 rounded-md xs:h-auto xs:square flex ">
                     <Suspense fallback={<CardLoading />} >

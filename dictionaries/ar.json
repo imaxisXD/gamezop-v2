@@ -1,9 +1,23 @@
 {
-    "navbar": {
-        "menu": "القائمة",
-        "categories": "الفئات",
-        "gameofweek": "لعبة الأسبوع",
-        "trendinggame": "ألعاب رائجة",
-        "newlyadded": "مضافة حديثًا"
-    }
+    "menu": "القائمة",
+    "categories": "الفئات",
+    "gameofweek": "لعبة الأسبوع",
+    "trendinggame": "ألعاب رائجة",
+    "newlyadded": "مضافة حديثًا",
+    "trendinggame.subheading": "جرب ألعاب الاتجاه التي يحبها الكثيرون.",
+    "randomHeading": "هل أنت مرتبك حول ما يجب أن تلعب؟",
+    "spinToplay": "دور للعب",
+    "randomGame": "لعبة عشوائية",
+    "CTA": "انقر هنا",
+    "play": "العب",
+    "game": "ألعاب",
+    "viewMore": "عرض المزيد",
+    "fav": "المفضلة",
+    "addFav": "أضف ألعابك المفضلة!",
+    "nothingFav": "لم يتم إضافة أي شيء إلى المفضلة!",
+    "notaddedtofavError": "لم تتم إضافتها إلى المفضلة",
+    "favErrorMsg": "لم يتمكن من إضافة هذه اللعبة إلى المفضلات الخاصة بك. يرجى المحاولة مرة أخرى لاحقًا.",
+    "removeFav": "تمت إزالتها من المفضلة",
+    "addedtofav": "تمت إضافتها إلى المفضلة",
+    "searchPlaceholde": "ابحث عن الألعاب"
 }

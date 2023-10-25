@@ -1,9 +1,23 @@
 {
-    "navbar": {
-        "menu": "Menu",
-        "categories": "CATEGORIES",
-        "gameofweek": "Game of the Week",
-        "trendinggame": "Trending Games",
-        "newlyadded": "Newly Added"
-    }
+    "menu": "Menu",
+    "categories": "CATEGORIES",
+    "gameofweek": "Game of the Week",
+    "trendinggame": "Trending Games",
+    "newlyadded": "Newly Added",
+    "trendinggame.subheading": "Try out the trending games, that are being loved by many.",
+    "randomHeading": "Confused on what to play ?",
+    "spinToplay": "Spin To Play",
+    "randomGame": "Random Game",
+    "CTA": "Click here",
+    "play": "Play",
+    "game": "Games",
+    "viewMore": "View more",
+    "fav": "Favourites",
+    "addFav": "Add Fav Games!",
+    "nothingFav": "Nothing added to favorite!",
+    "notaddedtofavError": "not added to favorites",
+    "favErrorMsg": "This game could not be added to your favorites. Please try again later.",
+    "removeFav": "removed from favorites",
+    "addedtofav": "added to favorites",
+    "searchPlaceholde": "Search games"
 }
