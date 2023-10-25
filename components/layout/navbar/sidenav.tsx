@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { Categories, Translation } from "@/utils/types";
 import { usePathname } from "next/navigation";
 import { Locale } from "@/i18n.config";
-
+import { i18n } from '@/i18n.config'
 
 export default function SideNav({
     translations, categories, lang
@@ -19,16 +19,48 @@ export default function SideNav({
     const [isOpen, setIsOpen] = useState(false);
     const close = () => setIsOpen(false);
     const pathname = usePathname()
+    const [langSelectorOpen, setLangSelectorOpen] = useState(false);
+
+
+    const redirectedPathName = (locale: string) => {
+        if (!pathname) return '/'
+        const segments = pathname.split('/')
+        segments[1] = locale
+        return segments.join('/')
+    }
 
     return (
         <nav className="fixed top-0 z-30 lg:z-auto lg:w-72 w-full lg:bottom-0 rounded-r-3xl flex flex-col items-start bg-navbar gap-1 text-fontcolor">
-            <Link
-                href={`/${lang}`}
-                className="group flex w-full items-center justify-normal lg:justify-center gap-x-2.5"
-                onClick={close}
-            >
-                <Image src='/logo-gamezop.png' alt="gamezop logo" height={150} width={100} className="" />
-            </Link>
+            <div className="flex items-center justify-start mx-auto">
+
+                <Link
+                    href={`/${lang}`}
+                    className="group flex w-full items-center justify-normal lg:justify-center gap-x-2.5"
+                    onClick={close}
+                >
+                    <Image src='/logo-gamezop.png' alt="gamezop logo" height={150} width={100} className="" />
+                </Link>
+                <div className="relative">
+                    <button className=" text-black bg-yellow-400 hover:bg-blue-500 transition duration-300 focus:outline-none font-medium rounded-lg text-sm px-2 py-1 text-center inline-flex items-center" type="button" onClick={() => setLangSelectorOpen((prev) => !prev)}>{lang}
+                        <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <div className={`z-50 ${langSelectorOpen ? "" : "hidden"} bg-white divide-y divide-gray-100 rounded-lg shadow w-fit absolute top-8 max-h-24 no-scrollbar overflow-y-auto`}>
+                        <ul className="text-sm text-gray-700" aria-labelledby="dropdownHoverButton">
+                            {i18n.locales.map(locale => {
+                                if (locale === lang) {
+                                    return null
+                                }
+                                return (
+                                    <Link key={locale} href={redirectedPathName(locale)} className=" border-b border-slate-800 block px-4 py-2 hover:bg-yellow-300 font-medium">{locale}
+                                    </Link>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <button
                 type="button"
                 className="group absolute right-0 top-4 flex h-14 items-center gap-x-2 px-4 lg:hidden"
@@ -82,7 +114,7 @@ export default function SideNav({
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }
 

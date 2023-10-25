@@ -1,6 +1,8 @@
 import CardLoading from '@/components/ui/game-card/card-loading';
 import GameCard from '@/components/ui/game-card/game-card';
+import { Locale } from '@/i18n.config';
 import { getData } from '@/utils/fetchdata'
+import { getLang } from '@/utils/getLang';
 import { Game, GameData } from '@/utils/types';
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react';
@@ -9,10 +11,11 @@ type Categories = {
     [key: string]: string;
 };
 
-export default async function CategoryPage({ params }: { params: { categories: string } }) {
+export default async function CategoryPage({ params }: { params: { categories: string, lang: Locale } }) {
     let gameBasedOnCategory: Game[] = [];
     let categoryName = "";
-    const results: GameData = await getData();
+    const results: GameData = await getData(params.lang);
+    const Translations = await getLang(params.lang);
     const allGames = results.data.games;
     if (params.categories === 'new-games') {
         const newlyAddedGamesCodes = results.data.newlyAddedGames;
@@ -32,7 +35,7 @@ export default async function CategoryPage({ params }: { params: { categories: s
     }
     return (
         <section className='flex flex-col justify-center items-start gap-6'>
-            <h1 className='text-white text-3xl'><span className='text-blue-400'>Category:</span> {categoryName || 'Newly Added'}</h1>
+            <h1 className='text-white text-3xl'><span className='text-blue-400'>{Translations.categories}:</span> {categoryName || 'Newly Added'}</h1>
             <div className="w-full grid auto-rows-[192px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {gameBasedOnCategory && gameBasedOnCategory.map((game, i) => (
                     <div
