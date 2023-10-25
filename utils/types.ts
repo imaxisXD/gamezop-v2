@@ -38,3 +38,12 @@ export type FavGameData = {
     blurImg: string;
     url?: string;
 };
+
+
+export type NavBarTranslation = {
+    menu: string;
+    categories: string;
+    gameofweek: string;
+    trendinggame: string;
+    newlyadded: string;
+}

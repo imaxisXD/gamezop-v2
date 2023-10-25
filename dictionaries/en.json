@@ -1,0 +1,9 @@
+{
+    "navbar": {
+        "menu": "Menu",
+        "categories": "CATEGORIES",
+        "gameofweek": "Game of the Week",
+        "trendinggame": "Trending Games",
+        "newlyadded": "Newly Added"
+    }
+}

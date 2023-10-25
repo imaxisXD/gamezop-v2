@@ -5,6 +5,10 @@ import SideNav from '@/components/layout/navbar/sidenav'
 import { Toaster } from 'sonner'
 import Footer from '@/components/layout/footer'
 import SearchBar from '@/components/layout/searchbar'
+import { Locale, i18n } from '@/i18n.config'
+import NavbarWrapper from '@/components/layout/navbar/navbarwrapper'
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -12,16 +16,22 @@ export const metadata: Metadata = {
   description: 'Gamezop website redisigned and reimagined',
 }
 
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ lang: locale }))
+}
+
 export default function RootLayout({
   children,
+  params
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { lang: Locale }
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang={params.lang} className={inter.className}>
       <body className='bg-background overflow-y-scroll text-fontcolor bg-page-gradient'>
         <Toaster richColors />
-        <SideNav />
+        <NavbarWrapper lang={params.lang} />
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-32 xs:pt-32 md:pt-32 lg:pt-16 lg:px-8">
             <SearchBar />

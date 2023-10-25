@@ -1,0 +1,9 @@
+{
+    "navbar": {
+        "menu": "Меню",
+        "categories": "Категории",
+        "gameofweek": "Игра недели",
+        "trendinggame": "Популярные игры",
+        "newlyadded": "Недавно добавленные"
+    }
+}
